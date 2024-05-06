@@ -53,28 +53,26 @@
   <body>
     <main>
       <section>
-        <div class="container mt-5">
+        <div class="container">
           <div class="row">
-            <?php
-              foreach ($hotels as $hotel) {
-                echo '
-                  <div class="col">
-                  <div class="card">
-                  <div class="card-body">
-                  <p>
-                  ';
-                foreach ($hotel as $key) {
-                  echo $key;
-                  echo '<br>';
-                };
-                echo '
-                  </p>
-                  </div>
-                  </div>
-                  </div>
-                  ';
-              };
-            ?>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <table>
+                    <?php
+                      foreach ($hotels as $hotel) {
+                        echo '<p>';
+                        foreach ($hotel as $key) {
+                          echo $key;
+                          echo '<br>';
+                        }
+                        echo '</p>';
+                      }
+                    ?>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
