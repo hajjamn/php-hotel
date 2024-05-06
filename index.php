@@ -37,9 +37,6 @@
       'distance_to_center' => 50
     ],
   ];
-
-
-
 ?>
 
 <!doctype html>
@@ -58,17 +55,33 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  <table>
-                    <?php
-                      foreach ($hotels as $hotel) {
-                        echo '<p>';
-                        foreach ($hotel as $key) {
-                          echo $key;
-                          echo '<br>';
+                  <table class="table table-striped-columns text-center">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Parking</th>
+                        <th>Vote</th>
+                        <th>Distance to Center</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                        foreach ($hotels as $hotel) {
+                          echo '<tr>';
+                          foreach ($hotel as $key => $value) {
+                            echo '<td>';
+                            if ($key === 'parking') {
+                              echo $bool = $value === true ? 'Yes' : 'No';
+                            } else {
+                              echo $value;
+                            }
+                            echo '</td>';
+                          }
+                          echo '</tr>';
                         }
-                        echo '</p>';
-                      }
-                    ?>
+                      ?>
+                    </tbody>
                   </table>
                 </div>
               </div>
